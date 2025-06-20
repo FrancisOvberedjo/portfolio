@@ -4,23 +4,21 @@ import Image from 'next/image'
 
 const ImageCard = () => {
   return (
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative w-full md:w-3xl h-120 lg:items-center lg:justify-center rounded-xl overflow-hidden bg-gradient-to-b from-[#AE161D] to-[#D91B24] shadow-lg mt-5 lg:mt-20"
-      >
-          <div className="absolute bottom-0 w-full flex justify-center">
-            <Image
-              src="/assets/francis.png" // Replace with your transparent image
-              alt="Transparent Image"
-              width={400}
-              height={0}
-              style={{ height: 'auto' }}
-              className="object-contain"
-            />
-          </div>
-      </motion.div>
+     <motion.div
+      className="bg-blue-600 rounded-[10px] w-full h-auto md:w-64 md:h-80   relative overflow-hidden flex items-end justify-center"
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: 'spring', stiffness: 70 }}
+    >
+      <Image
+        src="/assets/francis.png"
+        alt="Francis"
+        width={300}
+        height={200}
+        className="object-contain"
+        style={{ height: 'auto' }}
+        priority
+      />
+    </motion.div>
   )
 }
 

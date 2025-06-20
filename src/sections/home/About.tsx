@@ -2,14 +2,16 @@ import Button from '@/components/ui/Button'
 import SectionDivider from '@/components/ui/SectionDivider'
 import React from 'react'
 import { Download } from 'lucide-react';
+import SectionHeader from '@/components/general/SectionHeader';
+import SectionTitle from '@/components/general/SectionTitle';
 
 const About = () => {
   return (
     <section className='mt-6 w-full px-4 md:max-w-3xl lg:max-w-6xl  items-center justify-center mx-auto'>
        
-        <SectionDivider/>
+        <SectionHeader title="About" index="FO® — 01..09" />
         
-        <h3>About</h3>
+        <SectionTitle title="A Few Things About Me"/>
         <p>
             I&rsquo;m a multidisciplinary professional with a background in software engineering and a strong foundation in design. My expertise spans frontend web development, UI/UX design, and graphic design allowing me to bring both visual clarity and technical precision to every project.
 
@@ -30,7 +32,7 @@ const About = () => {
         </ul>
 
         <SectionDivider/>
-        <Button downloadHref="/francis-cv.pdf" variant="gray" icon={Download}>
+        <Button downloadHref="/francis-cv.pdf" variant="primary" icon={Download}>
             Download CV
         </Button>
 

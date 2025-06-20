@@ -4,23 +4,24 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '../ui/Button';
 
-const menuItems = ['Home', 'About', 'Services', 'Contact'];
+const menuItems = ['Home', 'About', 'Projects', 'Contact'];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Hide/show navbar on scroll
+  // Hide/show navbar on scroll (mobile only)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        setShowNavbar(false); // scrolling down
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // scrolling up
+        setShowNavbar(true);
       }
       setLastScrollY(currentScrollY);
     };
@@ -34,12 +35,46 @@ export default function Navbar() {
       {/* Thin orange line */}
       <div className="w-full h-1.5 bg-custom-accent fixed top-0 left-0 z-50" />
 
-      {/* Navbar */}
+      {/* Sticky wrapper for desktop */}
+      <div className="hidden md:block sticky top-0 z-40 bg-white transition-colors duration-300">
+        <div className="w-full px-3 lg:px-20 py-4 flex items-center justify-between">
+          <Image
+            src="/assets/logo.svg"
+            alt="Logo"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+          />
+
+          <div className="flex items-center justify-center space-x-8">
+            {menuItems.map((item, index) => (
+              <Link key={item} href={`/${item.toLowerCase()}`}>
+                <motion.div
+                  className="font-semibold text-sm cursor-pointer flex items-start space-x-1"
+                  initial={{ color: '#121212', scale: 1 }}
+                  whileHover={{ color: '#f97316', scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span>{item}</span>
+                  <sup className="text-[10px] relative top-[2px] text-gray-500">
+                    {String(index + 1).padStart(2, '0')}
+                  </sup>
+                </motion.div>
+              </Link>
+            ))}
+            <Button>Portfolio</Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Animated navbar for mobile */}
       <motion.div
-        className="fixed top-0 left-0 w-full px-20 py-4 flex items-center justify-between bg-white z-40"
+        className={`md:hidden fixed top-0 left-0 w-full px-3 lg:px-20 py-4 flex items-center justify-between z-40 transition-colors duration-300 ${
+          isOpen ? 'bg-transparent' : 'bg-white'
+        }`}
         initial={{ y: 0 }}
         animate={{ y: showNavbar ? 0 : '-100%' }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        transition={{ duration: 0.25, ease: 'easeInOut' }}
       >
         <Image
           src="/assets/logo.svg"
@@ -49,37 +84,18 @@ export default function Navbar() {
           className="h-8 w-auto"
         />
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex  items-center justify-center space-x-8">
-          {menuItems.map((item) => (
-            <motion.div
-              key={item}
-              className="font-semibold  text-sm cursor-pointer"
-              initial={{ color: '#121212', scale: 1 }}
-              whileHover={{ color: '#f97316', scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              {item}
-            </motion.div>
-          ))}
-
-
-          <Button>Portfolio</Button>
-        </div>
-
-        {/* Mobile Toggle */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           initial={false}
           animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="text-custom-black md:hidden"
+          transition={{ duration: 0.2, ease: 'easeInOut' }}
+          className="text-custom-black"
         >
           <Plus size={28} />
         </motion.button>
       </motion.div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
@@ -103,14 +119,19 @@ export default function Navbar() {
               <div className="w-full h-[1px] bg-white opacity-30 mb-1 mx-auto" />
               {menuItems.map((item, index) => (
                 <div key={item}>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 * index }}
-                    className="font-bold py-1"
-                  >
-                    {item}
-                  </motion.div>
+                  <Link href={`/${item.toLowerCase()}`}>
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.05 * index }}
+                      className="font-bold py-1 flex items-start space-x-1"
+                    >
+                      <span>{item}</span>
+                      <sup className="text-xs relative top-[2px] text-white opacity-60">
+                        {String(index + 1).padStart(2, '0')}
+                      </sup>
+                    </motion.div>
+                  </Link>
                   <div className="w-full h-[1px] bg-white opacity-30 my-1 mx-auto" />
                 </div>
               ))}

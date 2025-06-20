@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import SectionDivider from '@/components/ui/SectionDivider';
+import SectionHeader from '@/components/general/SectionHeader';
+
 
 const sections = ['Frontend', 'Backend', 'DevTools'] as const;
 type SectionType = typeof sections[number];
@@ -16,8 +17,8 @@ const TechStack = () => {
   return (
     <section className="mt-6 w-full px-3 md:max-w-3xl lg:max-w-6xl  items-center justify-center mx-auto">
 
-      <SectionDivider/>
-      
+      <SectionHeader title="Tech Stac" index="FO® — 03"/>
+
       {/* Toggle */}
       <div className="relative flex bg-gray-200 rounded-full w-full max-w-[78%] md:max-w-sm mx-auto h-12 overflow-hidden">
         {/* Indicator */}

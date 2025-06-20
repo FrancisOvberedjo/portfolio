@@ -25,7 +25,7 @@ const SectionTitle = ({
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1], // easeOutExpo-like
         }}
-        className={`font-bold font-red text-5xl lg:text-7xl py-5 ${textColor} ${className}`}
+        className={`font-bold font-red text-4xl lg:text-7xl py-2 uppercase ${textColor} ${className}`}
       >
         {title}
       </motion.h2>
