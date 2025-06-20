@@ -15,12 +15,7 @@
   --color-custom-accent:#d91b24;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #121212;
-  }
-}
+
 
 body {
   background: var(--background);
