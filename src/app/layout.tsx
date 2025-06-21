@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mont.variable} ${poppins.variable} bg-white text-custom-black text-[12px] md:text-xl lg:text-lg antialiased`}
+        className={`${mont.variable} ${poppins.variable} bg-white text-custom-black font-normal text-sm md:text-xl lg:text-lg antialiased`}
       >
         <Navbar/>
           <main className="pt-24">
