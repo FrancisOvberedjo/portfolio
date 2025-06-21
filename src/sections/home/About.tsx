@@ -13,7 +13,7 @@ const About = () => {
         <SectionHeader title="About" index="FO® — 01" />
         
         <SectionTitle title="A Few Things About Me"/>
-        <p>
+        <p className='text-justify'>
             I&rsquo;m a multidisciplinary professional with a background in software engineering and a strong foundation in design. My expertise spans frontend web development, UI/UX design, and graphic design allowing me to bring both visual clarity and technical precision to every project.
 
             With experience in tools like Next.js, Tailwind CSS, Framer Motion, JavaScript, and TypeScript, I&rsquo;m focused on creating clean, responsive interfaces that are both intuitive and engaging. I work best when combining structure with strategy, and I believe that anything worth doing is worth doing well. Currently open to full-time opportunities where I can contribute, learn, and grow.
@@ -27,7 +27,7 @@ const About = () => {
         <SectionDivider/>
 
         <h3 className='font-black uppercase'>Profile</h3>
-        <ul className='mt-5'>
+        <ul className='mt-5 space-y-2'>
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Full Name: Francis Ovberedjo</span></li>
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Date of Birth: 31/05/2001</span></li>
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Nationality: Nigerian</span></li>
@@ -37,7 +37,7 @@ const About = () => {
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Phone Number: 08161122595</span></li>
         </ul>
 
-        <h3 className='font-bold mt-5'>Socials</h3>
+        <h3 className='font-black mt-5 uppercase'>Socials</h3>
         <div className='mt-5'>
           <SocialIcons/>
         </div>

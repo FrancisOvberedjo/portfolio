@@ -16,7 +16,7 @@ const mont = Montserrat({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400","500","600", "700", "800"],
+  weight: ["300","400","500","600", "700", "800"],
 });
 
 
@@ -37,7 +37,7 @@ export default function RootLayout({
         className={`${mont.variable} ${poppins.variable} bg-white text-custom-black font-normal text-sm md:text-xl lg:text-lg antialiased`}
       >
         <Navbar/>
-          <main className="pt-24">
+          <main className="pt-24 lg:pt-20">
            {children}
           </main>
         <Footer/>

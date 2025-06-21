@@ -48,7 +48,7 @@ export default function RotatingTitles() {
               duration: 0.8,
               ease: [0.4, 0.0, 0.2, 1], // smoother easing
             }}
-            className="absolute top-0 left-0 w-full text-sm font-medium text-center text-black"
+            className="absolute top-0 left-0 w-full font-light text-center text-black"
           >
             {titles[index]}
           </motion.span>

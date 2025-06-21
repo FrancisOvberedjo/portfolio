@@ -31,7 +31,7 @@ const ProjectCard = ({ title, image, slug, liveUrl, githubUrl }: ProjectCardProp
 
       <div className="p-4 flex flex-col gap-3">
         {/* Title */}
-        <h3 className="text-xl font-semibold dark:text-white">{title}</h3>
+        <h3 className="text-xl font-semibold">{title}</h3>
 
         {/* Buttons */}
         <div className="flex items-center gap-2 mt-2">

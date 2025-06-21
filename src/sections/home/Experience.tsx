@@ -76,32 +76,36 @@ const Experience = () => {
   return (
 
     <section className='mt-6 w-full px-3 md:max-w-3xl lg:max-w-6xl  items-center justify-center mx-auto'>
-      <SectionHeader title='Experience' index='04'/>
-      <div className='grid grid-cols-1 lg:grid-cols-2'>
-        
-      <div>
-      <SectionTitle title='Experience'/>
-      </div>
+      <SectionHeader title='Experience' index='FO® — 04'/>
+      <SectionTitle title='Career Journey So Far'/>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
 
-    <div className="w-full max-w-3xl mx-auto px-4">
-      {experiences.map((exp, index) => (
-        <div
-          key={index}
-          className="border-b border-gray-700 py-4"
-        >
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => toggleIndex(index)}
-          >
-            <div>
-              <p className="font-semibold text-lg">{exp.title}</p>
-              <p className="text-sm text-custom-gray">{exp.company}</p>
-              <p className="text-xs text-gray-500">{exp.duration}</p>
+        <div className='mt-3 text-justify space-y-2' >
+          <p>My career began with a strong foundation in visual design, working as a graphic designer to create impactful brand assets for businesses. Over time, I transitioned into front-end development, where I deepened my technical skills through hands-on experience and a front-end internship. From there, I moved into web development roles, building modern, responsive websites for clients across different industries.</p>
+          <p>I started by creating websites with WordPress, Elementor, and other CMS platforms, focusing on flexible, easy-to-manage solutions for small businesses and startups. As I grew, I began working with more advanced technologies like React, Next.js, Tailwind CSS, and Framer Motion, building fast, accessible, and user-focused websites. I also integrate SEO best practices into every project—improving structure, speed, and visibility from the ground up.</p>
+          <p>In 2024, I earned my B.Sc. in Software Engineering from Nigerian Army University Biu (NAUB), and now lead development at DAF - BLEX I.C.T Services while running my own creative studio, Webink. Today, I combine design thinking, clean code, and real-world strategy to build digital experiences that work beautifully and deliver results.
+          </p>
+        </div>
+
+          <div className="w-full mx-auto">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="border-b border-gray-700 py-4"
+              >
+              <div
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleIndex(index)}
+              >
+                <div>
+                  <p className="font-semibold text-lg">{exp.title}</p>
+                  <p className="text-sm text-custom-gray">{exp.company}</p>
+                  <p className="text-xs text-gray-500">{exp.duration}</p>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-primary-accent text-white flex items-center justify-center">
+                  {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                </div>
             </div>
-            <div className="w-8 h-8 rounded-full bg-primary-accent text-white flex items-center justify-center">
-              {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
-            </div>
-          </div>
 
           <AnimatePresence>
             {activeIndex === index && (

@@ -25,7 +25,7 @@ const SectionTitle = ({
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className={`font-bold text-2xl lg:text-7xl mb-2 uppercase ${textColor} ${className}`}
+        className={`font-bold text-2xl lg:text-4xl mb-2 uppercase ${textColor} ${className}`}
       >
         {title}
       </motion.h2>

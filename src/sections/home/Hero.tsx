@@ -15,11 +15,11 @@ const Hero = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-3xl md:text-6xl lg:text-8xl font-extrabold uppercase'
+        className='text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-wide uppercase'
       >
         francis ovberedjo
       </motion.h1>
-
+   
       <div className='lg:grid grid-cols-3'>
 
         <div>
