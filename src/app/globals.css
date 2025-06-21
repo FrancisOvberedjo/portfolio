@@ -9,10 +9,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-custom-gray:#d9d9d9;
+  --color-custom-gray:#708090;
   --color-custom-black:#121212;
   --color-custom-text:#333333;
-  --color-custom-accent:#d91b24;
+  --color-primary-accent:#ADFF00;
+  --color-secondary-accent:#754AF8;
+
 }
 
 

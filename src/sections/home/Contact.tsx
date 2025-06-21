@@ -21,7 +21,7 @@ const Contact = () => {
         <div>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="bg-red-600 p-2 rounded-full">
+                <div className="bg-primary-accent p-2 rounded-full">
                   <MapPin className="text-white w-5 h-5" />
                 </div>
                 <div>

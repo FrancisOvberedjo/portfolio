@@ -31,12 +31,12 @@ export default function SectionHeader({ title, index }: SectionHeaderProps) {
       >
         {/* Left: Red square + Title */}
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-red-600 rounded-[2px]"></div>
+          <div className="w-2 h-2 bg-primary-accent rounded-[2px]"></div>
           <span className="font-medium">{title}</span>
         </div>
 
         {/* Index: mobile = right, desktop = center */}
-        <div className="md:hidden text-gray-500">{index}</div>
+        <div className="md:hidden text-custom-gray">{index}</div>
 
         {/* Center (desktop only) */}
         <div className="hidden md:flex justify-center flex-1 absolute left-1/2 -translate-x-1/2 pointer-events-none text-gray-500">

@@ -95,10 +95,10 @@ const Experience = () => {
           >
             <div>
               <p className="font-semibold text-lg">{exp.title}</p>
-              <p className="text-sm text-gray-400">{exp.company}</p>
+              <p className="text-sm text-custom-gray">{exp.company}</p>
               <p className="text-xs text-gray-500">{exp.duration}</p>
             </div>
-            <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-primary-accent text-white flex items-center justify-center">
               {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
             </div>
           </div>
