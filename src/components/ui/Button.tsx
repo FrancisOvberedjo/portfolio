@@ -1,8 +1,9 @@
+'use client';
+
 import { ButtonHTMLAttributes } from 'react';
 import { LucideIcon } from 'lucide-react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary';
   icon?: LucideIcon;
   iconClassName?: string;
   children: React.ReactNode;
@@ -10,7 +11,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = ({
-  variant = 'primary',
   icon: Icon,
   iconClassName = '',
   children,
@@ -18,48 +18,56 @@ const Button = ({
   downloadHref,
   ...props
 }: ButtonProps) => {
-  const isSecondary = variant === 'secondary';
+  const baseClass = `
+    relative inline-flex items-center justify-between
+    px-6 py-3 bg-[#ADFF00] text-[#121212]
+    font-semibold text-xs uppercase tracking-widest
+    border-[1.5px] border-[#2B2B2B]
+    rounded-none
+    transition-all duration-300 ease-in-out
+    group hover:bg-[#754AF8] hover:text-white
+  `;
 
-  const baseClass =
-    'relative group overflow-hidden inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 ease-in-out ' +
-    (isSecondary
-      ? 'border border-gray-800 text-gray-800 bg-white hover:text-white'
-      : 'bg-custom-gray text-custom-black hover:text-white') +
-    (className ? ` ${className}` : '');
+  const sideAccent = `
+    absolute left-0 top-0 h-full w-[6px] bg-[#2B2B2B]
+    transition-transform duration-300
+    group-hover:w-[10px]
+  `;
 
-  const bgAnimation = isSecondary
-    ? 'before:absolute before:inset-0 before:bg-orange-500 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out group-hover:before:scale-x-100 before:z-0'
-    : 'before:absolute before:inset-0 before:bg-custom-accent before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out group-hover:before:scale-x-100 before:z-0';
+  const iconWrapper = Icon && (
+    <span className={`
+      ml-3 transform translate-x-1 opacity-0
+      transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0
+    `}>
+      <Icon size={14} className={`text-inherit ${iconClassName}`} />
+    </span>
+  );
 
-  const contentClass = 'relative z-10 flex items-center gap-2';
+  const content = (
+    <span className="relative z-10 flex items-center">
+      {children}
+      {iconWrapper}
+    </span>
+  );
 
-  const iconElement = Icon && (
-    isSecondary ? (
-      <span className="bg-custom-gray p-1.5 rounded-full">
-        <Icon size={16} className={`text-custom-gray group-hover:text-white ${iconClassName}`} />
-      </span>
-    ) : (
-      <Icon size={16} className={`text-custom-black group-hover:text-white ${iconClassName}`} />
-    )
+  const inner = (
+    <>
+      <span className={sideAccent}></span>
+      {content}
+    </>
   );
 
   if (downloadHref) {
     return (
-      <a href={downloadHref} download className={`${baseClass} ${bgAnimation}`}>
-        <span className={contentClass}>
-          {children}
-          {iconElement}
-        </span>
+      <a href={downloadHref} download className={`${baseClass} ${className}`}>
+        {inner}
       </a>
     );
   }
 
   return (
-    <button {...props} className={`${baseClass} ${bgAnimation}`}>
-      <span className={contentClass}>
-        {children}
-        {iconElement}
-      </span>
+    <button {...props} className={`${baseClass} ${className}`}>
+      {inner}
     </button>
   );
 };

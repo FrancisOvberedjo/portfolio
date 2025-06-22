@@ -64,7 +64,7 @@ const StackCards: React.FC<StackCardsProps> = ({ variant = 'programmingLanguages
 
   return (
     <div
-      className="w-full bg-custom-gray rounded-2xl p-5 flex items-center justify-center"
+      className="w-full bg-light-gray rounded-2xl p-5 flex items-center justify-center"
       onClick={handleNext}
     >
       <div className="w-full aspect-[5/3] bg-white rounded-xl relative overflow-hidden flex items-center justify-center">

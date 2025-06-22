@@ -14,7 +14,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ title, image, slug, liveUrl, githubUrl }: ProjectCardProps) => {
   return (
-    <div className="w-full max-w-sm border-2 border-custom-gray rounded-[10px]  overflow-hiddden">
+    <div className="w-full max-w-sm border-2 border-light-gray rounded-[10px]  overflow-hiddden">
       {/* Image that links to the dynamic project page */}
       <div className='p-2 '>
       <Link href={`/projects/${slug}`}>

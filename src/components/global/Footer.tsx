@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import SocialIcons from '../ui/SocialIcons';
 
 const Footer = () => {
@@ -10,15 +11,21 @@ const Footer = () => {
         
         {/* Logo */}
         <div>
-          <h2 className="text-2xl font-bold">YourLogo</h2>
-          <p className="text-sm mt-2">Building modern digital experiences.</p>
+          <Image 
+            src="/assets/logo-white.svg" 
+            alt="Your Logo" 
+            width={120} 
+            height={40} 
+            className="object-contain"
+          />
+          <p className="text-sm mt-2">Francis | Front-End Developer, UI/UX Designer, and Graphic Artist crafting clean, functional digital experiences.</p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+          <h3 className="text-lg font-semibold text-primary-accent mb-2">Quick Links</h3>
           <ul className="space-y-1 text-sm">
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/" className='hover:text-primary-accent'>Home</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/projects">Projects</Link></li>
             <li><Link href="/contact">Contact</Link></li>
@@ -27,17 +34,17 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">Contact</h3>
-          <ul className="space-y-1 text-sm">
-            <li>Phone: +234 000 000 0000</li>
+          <h3 className="text-lg font-semibold text-primary-accent mb-2">Contact</h3>
+          <ul className="space-y-2 text-sm">
+            <li>Phone: +234 816 112 2595</li>
             <li>Address: Lagos, Nigeria</li>
-            <li>Email: yourmail@gmail.com</li>
+            <li>Email: francisovberedjo@gmail.com</li>
           </ul>
         </div>
 
         {/* Social Icons */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">Follow Me</h3>
+          <h3 className="text-lg font-semibold text-primary-accent mb-2">Follow Me</h3>
           <SocialIcons />
         </div>
       </div>

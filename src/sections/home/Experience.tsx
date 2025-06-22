@@ -99,7 +99,7 @@ const Experience = () => {
               >
                 <div>
                   <p className="font-semibold text-lg">{exp.title}</p>
-                  <p className="text-sm text-custom-gray">{exp.company}</p>
+                  <p className="text-sm text-dark-gray">{exp.company}</p>
                   <p className="text-xs text-gray-500">{exp.duration}</p>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-primary-accent text-white flex items-center justify-center">

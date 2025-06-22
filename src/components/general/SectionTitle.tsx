@@ -17,7 +17,7 @@ const SectionTitle = ({
     color === 'white' ? 'text-white' : 'text-custom-black';
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden my-5">
       <motion.h2
         initial={{ y: '100%' }}
         animate={{ y: 0 }}

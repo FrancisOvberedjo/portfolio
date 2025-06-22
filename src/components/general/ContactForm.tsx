@@ -2,7 +2,7 @@
 
 export default function ContactForm() {
   return (
-    <form className="bg-gray-100 p-6 rounded-lg space-y-10 md:space-y-15">
+    <form className="bg-light-gray p-6 rounded-lg space-y-10 md:space-y-15">
       {/* First + Last Name */}
       <div className="flex flex-col md:flex-row gap-4">
         <div className="w-full">

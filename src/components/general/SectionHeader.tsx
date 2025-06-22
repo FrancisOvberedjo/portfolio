@@ -32,19 +32,19 @@ export default function SectionHeader({ title, index }: SectionHeaderProps) {
         {/* Left: Red square + Title */}
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-primary-accent rounded-[2px]"></div>
-          <span className="font-medium">{title}</span>
+          <span className=" text-dark-gray">{title}</span>
         </div>
 
         {/* Index: mobile = right, desktop = center */}
-        <div className="md:hidden text-custom-gray">{index}</div>
+        <div className="md:hidden text-dark-gray">{index}</div>
 
         {/* Center (desktop only) */}
-        <div className="hidden md:flex justify-center flex-1 absolute left-1/2 -translate-x-1/2 pointer-events-none text-gray-500">
+        <div className="hidden md:flex justify-center flex-1 absolute left-1/2 -translate-x-1/2 pointer-events-none text-dark-gray">
           <span>{index}</span>
         </div>
 
         {/* Right (desktop only) */}
-        <div className="hidden md:block text-gray-400">©2025</div>
+        <div className="hidden md:block text-dark-gray">©2025</div>
       </motion.div>
     </div>
   );

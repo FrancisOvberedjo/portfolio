@@ -5,7 +5,7 @@ import Image from 'next/image'
 const ImageCard = () => {
   return (
      <motion.div
-      className="bg-blue-600 rounded-[10px] w-full h-auto md:w-64 md:h-80   relative overflow-hidden flex items-end justify-center"
+      className="bg-secondary-accent rounded-[10px] w-full h-auto md:w-64 md:h-80   relative overflow-hidden flex items-end justify-center"
       whileHover={{ scale: 1.05 }}
       transition={{ type: 'spring', stiffness: 70 }}
     >

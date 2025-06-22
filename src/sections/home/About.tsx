@@ -5,6 +5,7 @@ import { Download, Plus } from 'lucide-react';
 import SectionHeader from '@/components/general/SectionHeader';
 import SectionTitle from '@/components/general/SectionTitle';
 import SocialIcons from '@/components/ui/SocialIcons';
+import DownloadButton from '@/components/ui/DownloadButton';
 
 const About = () => {
   return (
@@ -19,9 +20,7 @@ const About = () => {
             With experience in tools like Next.js, Tailwind CSS, Framer Motion, JavaScript, and TypeScript, I&rsquo;m focused on creating clean, responsive interfaces that are both intuitive and engaging. I work best when combining structure with strategy, and I believe that anything worth doing is worth doing well. Currently open to full-time opportunities where I can contribute, learn, and grow.
         </p>
         <div className='mt-5'>
-          <Button downloadHref="/francis-cv.pdf" variant="primary" icon={Download}>
-              Download CV
-          </Button>
+          <DownloadButton/>
         </div>
 
         <SectionDivider/>
@@ -34,7 +33,7 @@ const About = () => {
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Current Location: Lagos, Nigeria</span></li>
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Education: B.Sc. Software Engineering</span></li>
             <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Languages: English (Fluent)</span></li>
-            <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Phone Number: 08161122595</span></li>
+            <li className='flex items-center gap-2'><Plus className="w-4 h-4 text-secondary-accent" /> <span>Phone Number: +234 816 112 2595</span></li>
         </ul>
 
         <h3 className='font-black mt-5 uppercase'>Socials</h3>
