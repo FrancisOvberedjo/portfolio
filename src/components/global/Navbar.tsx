@@ -125,7 +125,7 @@ export default function Navbar() {
             style={{ transformOrigin: 'top' }}
           >
             <div className="px-4">
-              <div className="w-full h-[1px] bg-custom-black opacity-20 mb-1 mx-auto" />
+              <div className="w-full h-[1.5px] bg-dark-gray/20 mb-1 mx-auto" />
               {menuItems.map((item, index) => (
                 <div key={item}>
                   <div onClick={() => setIsOpen(false)}>
@@ -134,7 +134,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.05 * index }}
-                        className="font-bold py-1 flex items-start space-x-1"
+                        className="font-bold text-xl py-2 flex items-start space-x-1"
                       >
                         <span>{item}</span>
                         <sup className="text-xs relative top-[2px] text-custom-black opacity-60">
@@ -143,7 +143,7 @@ export default function Navbar() {
                       </motion.div>
                     </Link>
                   </div>
-                  <div className="w-full h-[1px] bg-custom-black opacity-20 my-1 mx-auto" />
+                  <div className="w-full h-[1.5px] bg-dark-gray/20 my-1 mx-auto" />
                 </div>
               ))}
               <div className='my-5'>

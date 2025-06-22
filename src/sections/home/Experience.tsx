@@ -80,7 +80,7 @@ const Experience = () => {
       <SectionTitle title='Career Journey So Far'/>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
 
-        <div className='mt-3 text-justify space-y-2' >
+        <div className=' text-justify space-y-2' >
           <p>My career began with a strong foundation in visual design, working as a graphic designer to create impactful brand assets for businesses. Over time, I transitioned into front-end development, where I deepened my technical skills through hands-on experience and a front-end internship. From there, I moved into web development roles, building modern, responsive websites for clients across different industries.</p>
           <p>I started by creating websites with WordPress, Elementor, and other CMS platforms, focusing on flexible, easy-to-manage solutions for small businesses and startups. As I grew, I began working with more advanced technologies like React, Next.js, Tailwind CSS, and Framer Motion, building fast, accessible, and user-focused websites. I also integrate SEO best practices into every project—improving structure, speed, and visibility from the ground up.</p>
           <p>In 2024, I earned my B.Sc. in Software Engineering from Nigerian Army University Biu (NAUB), and now lead development at DAF - BLEX I.C.T Services while running my own creative studio, Webink. Today, I combine design thinking, clean code, and real-world strategy to build digital experiences that work beautifully and deliver results.
