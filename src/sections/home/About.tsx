@@ -1,7 +1,6 @@
-import Button from '@/components/ui/Button'
 import SectionDivider from '@/components/ui/SectionDivider'
 import React from 'react'
-import { Download, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import SectionHeader from '@/components/general/SectionHeader';
 import SectionTitle from '@/components/general/SectionTitle';
 import SocialIcons from '@/components/ui/SocialIcons';
