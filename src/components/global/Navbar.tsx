@@ -30,10 +30,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
   return (
     <div className="relative z-50">
       {/* Thin orange line */}
-      <div className="w-full h-1.5 bg-custom-accent fixed top-0 left-0 z-50" />
+      <div className="w-full h-1.5 bg-primary-accent fixed top-0 left-0 z-50" />
 
       {/* Sticky wrapper for desktop */}
       <div className="hidden md:block sticky top-0 z-40 bg-white transition-colors duration-300">
@@ -45,7 +53,6 @@ export default function Navbar() {
             height={40}
             className="h-8 w-auto"
           />
-
           <div className="flex items-center justify-center space-x-8">
             {menuItems.map((item, index) => (
               <Link key={item} href={`/${item.toLowerCase()}`}>
@@ -67,7 +74,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Animated navbar for mobile */}
+      {/* Mobile navbar (white) */}
       <motion.div
         className={`md:hidden fixed top-0 left-0 w-full px-3 lg:px-20 py-4 flex items-center justify-between z-40 transition-colors duration-300 ${
           isOpen ? 'bg-transparent' : 'bg-white'
@@ -90,16 +97,18 @@ export default function Navbar() {
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
           className="text-custom-black"
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           <Plus size={28} />
         </motion.button>
       </motion.div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu (below navbar, behind logo + button) */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            className="fixed top-0 left-0 w-full bg-custom-accent text-white z-30 pt-[5.5rem] overflow-hidden origin-top md:hidden"
+            className="fixed top-[0.375rem] left-0 w-full bg-primary-accent text-custom-black z-30 pt-[5.5rem] overflow-hidden origin-top md:hidden"
             initial={{ scaleY: 0, opacity: 0 }}
             animate={{ scaleY: 1, opacity: 1 }}
             exit={{ scaleY: 0, opacity: 0.6 }}
@@ -116,26 +125,32 @@ export default function Navbar() {
             style={{ transformOrigin: 'top' }}
           >
             <div className="px-4">
-              <div className="w-full h-[1px] bg-white opacity-30 mb-1 mx-auto" />
+              <div className="w-full h-[1px] bg-custom-black opacity-20 mb-1 mx-auto" />
               {menuItems.map((item, index) => (
                 <div key={item}>
-                  <Link href={`/${item.toLowerCase()}`}>
-                    <motion.div
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.05 * index }}
-                      className="font-bold py-1 flex items-start space-x-1"
-                    >
-                      <span>{item}</span>
-                      <sup className="text-xs relative top-[2px] text-white opacity-60">
-                        {String(index + 1).padStart(2, '0')}
-                      </sup>
-                    </motion.div>
-                  </Link>
-                  <div className="w-full h-[1px] bg-white opacity-30 my-1 mx-auto" />
+                  <div onClick={() => setIsOpen(false)}>
+                    <Link href={`/${item.toLowerCase()}`}>
+                      <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.05 * index }}
+                        className="font-bold py-1 flex items-start space-x-1"
+                      >
+                        <span>{item}</span>
+                        <sup className="text-xs relative top-[2px] text-custom-black opacity-60">
+                          {String(index + 1).padStart(2, '0')}
+                        </sup>
+                      </motion.div>
+                    </Link>
+                  </div>
+                  <div className="w-full h-[1px] bg-custom-black opacity-20 my-1 mx-auto" />
                 </div>
               ))}
+              <div className='my-5'>
+              <Button>Portfolio</Button>
+              </div>
             </div>
+            
           </motion.div>
         )}
       </AnimatePresence>
