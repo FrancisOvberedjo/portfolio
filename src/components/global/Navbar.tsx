@@ -59,19 +59,21 @@ export default function Navbar() {
                 <motion.div
                   className="font-semibold text-sm cursor-pointer flex items-start space-x-1"
                   initial={{ color: '#121212', scale: 1 }}
-                  whileHover={{ color: '#f97316', scale: 1.05 }}
+                  whileHover={{ color: '#754AF8', scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
                   <span>{item}</span>
-                  <sup className="text-[10px] relative top-[2px] text-gray-500">
+                  <sup className="text-[10px] relative top-[2px] text-dark-gray">
                     {String(index + 1).padStart(2, '0')}
                   </sup>
                 </motion.div>
               </Link>
             ))}
-            <Button>Portfolio</Button>
+             <Button> view portfolio</Button>
           </div>
+         
         </div>
+        
       </div>
 
       {/* Mobile navbar (white) */}

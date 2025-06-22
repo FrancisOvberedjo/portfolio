@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, Minus, Download } from 'lucide-react';
 import SectionHeader from '@/components/general/SectionHeader';
 import SectionTitle from '@/components/general/SectionTitle';
-
+import Button from '@/components/ui/Button';
 interface ExperienceItem {
   title: string;
   company: string;
@@ -128,6 +128,8 @@ const Experience = () => {
 
 
       </div>
+
+     
     </section>
   );
 };

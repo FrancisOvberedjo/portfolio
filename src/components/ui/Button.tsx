@@ -19,41 +19,25 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const baseClass = `
-    relative inline-flex items-center justify-between
-    px-6 py-3 bg-[#ADFF00] text-[#121212]
-    font-semibold text-xs uppercase tracking-widest
-    border-[1.5px] border-[#2B2B2B]
+    inline-flex items-center justify-center
+    gap-3 px-6 py-3
+    text-sm font-bold tracking-wide uppercase
+    bg-[#754AF8] text-[#121212]
+    border-2 border-[#2B2B2B]
     rounded-none
-    transition-all duration-300 ease-in-out
-    group hover:bg-[#754AF8] hover:text-white
-  `;
-
-  const sideAccent = `
-    absolute left-0 top-0 h-full w-[6px] bg-[#2B2B2B]
-    transition-transform duration-300
-    group-hover:w-[10px]
+    hover:bg-[#ADFF00] hover:text-white
+    transition-all duration-200 ease-in-out
+    shadow-[4px_4px_0_#2B2B2B]
   `;
 
   const iconWrapper = Icon && (
-    <span className={`
-      ml-3 transform translate-x-1 opacity-0
-      transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0
-    `}>
-      <Icon size={14} className={`text-inherit ${iconClassName}`} />
-    </span>
-  );
-
-  const content = (
-    <span className="relative z-10 flex items-center">
-      {children}
-      {iconWrapper}
-    </span>
+    <Icon size={16} className={`text-inherit ${iconClassName}`} />
   );
 
   const inner = (
     <>
-      <span className={sideAccent}></span>
-      {content}
+      {children}
+      {iconWrapper}
     </>
   );
 
