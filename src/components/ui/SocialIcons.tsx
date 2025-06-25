@@ -32,10 +32,10 @@ const SocialIcons = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
-          className="group rounded-full bg-primary-accent p-3 transition-colors duration-200 hover:bg-gray-400"
+          className="group rounded-full bg-custom-black p-3 transition-colors duration-200 hover:bg-primary-accent"
           aria-label={label}
         >
-          <Icon className="w-5 h-5 text-custom-black group-hover:text-white" />
+          <Icon className="w-5 h-5 text-white group-hover:text-custom-black" />
         </motion.a>
       ))}
     </div>
