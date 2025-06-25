@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import SectionHeader from '@/components/general/SectionHeader';
 import FrontEnd from '@/components/general/FrontEnd';
+import SectionTitle from '@/components/general/SectionTitle';
 
 
 const sections = ['Frontend', 'Backend', 'DevTools'] as const;
@@ -19,12 +20,13 @@ const TechStack = () => {
     <section className="mt-6 w-full px-3 md:max-w-3xl lg:max-w-6xl  items-center justify-center mx-auto">
 
       <SectionHeader title="Tech Stac" index="FO® — 03"/>
+      <SectionTitle title='My Development Stack' className='text-center'/>
 
       {/* Toggle */}
-      <div className="relative flex bg-gray-200 rounded-full w-full max-w-[78%] md:max-w-sm mx-auto h-12 overflow-hidden">
+      <div className="relative flex bg-light-gray rounded-full w-full max-w-[78%] md:max-w-sm mx-auto h-12 overflow-hidden mt-5">
         {/* Indicator */}
         <motion.div
-          className="absolute top-1 left-1 bottom-1 w-[calc(33.333%-0.5rem)] rounded-full bg-white shadow-md z-0"
+          className="absolute top-1 left-1 bottom-1 w-[calc(33.333%-0.5rem)] rounded-full bg-white shadow-sm z-0"
           animate={{
             left: `calc(${index * 33.333}% + 0.25rem)`,
           }}
@@ -40,8 +42,8 @@ const TechStack = () => {
               'flex-1 z-10 text-sm sm:text-base font-semibold transition-colors duration-300',
               'flex items-center justify-center',
               {
-                'text-black': active === section,
-                'text-[#555]': active !== section,
+                'text-custom-black': active === section,
+                'text-dark-gray': active !== section,
               }
             )}
           >
@@ -51,7 +53,7 @@ const TechStack = () => {
       </div>
 
       {/* Content */}
-      <div className="mt-10 min-h-[200px]">
+      <div className="mt-2 min-h-[200px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={active}

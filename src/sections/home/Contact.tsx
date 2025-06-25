@@ -21,39 +21,39 @@ const Contact = () => {
         <div>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="bg-primary-accent p-2 rounded-full">
-                  <MapPin className="text-custom-black w-5 h-5" />
+                <div className="bg-custom-black p-2 rounded-full">
+                  <MapPin className="text-primary-accent w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Address</p>
-                  <p className="text-base text-black">Lagos, Nigeria</p>
+                  <p className="text-base font-bold text-dark-gray">Address</p>
+                  <p className=" text-custom-black">Lagos, Nigeria</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-primary-accent p-2 rounded-full">
-                  <Phone className="text-custom-black w-5 h-5" />
+                <div className="bg-custom-black p-2 rounded-full">
+                  <Phone className="text-primary-accent w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Phone Number</p>
-                  <p className="text-base text-custom-black">08161122595</p>
+                  <p className="text-base font-bold text-dark-gray">Phone Number</p>
+                  <p className=" text-custom-black">+234 0 816 112 2595</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-primary-accent p-2 rounded-full">
-                  <Mail className="text-custom-black w-5 h-5" />
+                <div className="bg-custom-black p-2 rounded-full">
+                  <Mail className="text-primary-accent w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-gray-700">Email</p>
-                  <p className="text-base text-black">francisovberedjo@gmail.com</p>
+                  <p className="text-base font-bold text-dark-gray">Email</p>
+                  <p className=" text-custom-black">francisovberedjo@gmail.com</p>
                 </div>
               </div>
             </div>
       
             <SectionDivider/>
 
-            <div className="text-sm font-bold text-gray-700 space-y-4">
+            <div className="text-base font-bold text-custom-black space-y-4">
             <div>Where to Find Me: </div>
             <SocialIcons/>
             </div>

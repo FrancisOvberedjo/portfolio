@@ -3,6 +3,7 @@
 export default function ContactForm() {
   return (
     <form className="bg-light-gray p-6 rounded-lg space-y-10 md:space-y-15">
+    
       {/* First + Last Name */}
       <div className="flex flex-col md:flex-row gap-4">
         <div className="w-full">
@@ -46,7 +47,7 @@ export default function ContactForm() {
       {/* Submit Button */}
       <button
         type="submit"
-        className="bg-black text-white rounded-full px-6 py-2 text-sm"
+        className="bg-primary-accent text-custom-black rounded-full hover:bg-custom-black hover:text-white  px-6 py-2 text-sm"
       >
         Send Message
       </button>

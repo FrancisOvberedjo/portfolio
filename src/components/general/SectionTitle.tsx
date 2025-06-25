@@ -17,7 +17,7 @@ const SectionTitle = ({
     color === 'white' ? 'text-white' : 'text-custom-black';
 
   return (
-    <div className="overflow-hidden my-2 lg:my:4">
+    <div className="overflow-hidden mt-5 mb-2">
       <motion.h2
         initial={{ y: '100%' }}
         animate={{ y: 0 }}
@@ -25,7 +25,7 @@ const SectionTitle = ({
           duration: 0.8,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className={`font-bold text-2xl lg:text-4xl lg:mb-2 uppercase ${textColor} ${className}`}
+        className={`font-bold font-bebas text-4xl lg:text-7xl lg:mb-2 uppercase ${textColor} ${className}`}
       >
         {title}
       </motion.h2>

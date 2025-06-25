@@ -54,7 +54,7 @@ const ProjectCard = ({
           {tags.slice(0, 5).map((tag, i) => (
             <span
               key={i}
-              className="bg-[#ADFF00] text-[#121212] px-2 py-[2px] rounded-full"
+              className="bg-secondary-accent text-white px-2 py-[2px] rounded-full"
             >
               {tag}
             </span>

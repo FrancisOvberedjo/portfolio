@@ -15,7 +15,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className='text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-wide uppercase mt-[-10]'
+        className='text-4xl md:text-6xl lg:text-9xl font-extrabold font-bebas tracking-wide uppercase mt-[-10]'
       >
         francis ovberedjo
       </motion.h1>

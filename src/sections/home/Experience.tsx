@@ -90,18 +90,18 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="border-b border-gray-700 py-4"
+                className="border-b border-dark-gray py-4"
               >
               <div
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleIndex(index)}
               >
                 <div>
-                  <p className="font-semibold text-lg">{exp.title}</p>
-                  <p className="text-sm text-dark-gray">{exp.company}</p>
-                  <p className="text-xs text-gray-500">{exp.duration}</p>
+                  <p className="font-semibold text-lg text-custom-black">{exp.title}</p>
+                  <p className="text-md font-normal text-secondary-accent">{exp.company}</p>
+                  <p className="text-sm mt-2 text-dark-gray">{exp.duration}</p>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-primary-accent text-custom-black flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-custom-black text-primary-accent flex items-center justify-center">
                   {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
             </div>
@@ -113,7 +113,7 @@ const Experience = () => {
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="pl-4 mt-4 space-y-2 text-sm text-gray-300"
+                className="pl-4 mt-4 space-y-2 text-sm text-custom-black"
               >
                 {exp.duties.map((duty, i) => (
                   <li key={i} className="list-disc ml-4">{duty}</li>

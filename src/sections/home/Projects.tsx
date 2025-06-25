@@ -10,7 +10,7 @@ const Projects = () => {
         <SectionTitle title='Real-World Projects I&rsquo;ve Worked On'/>
         <p className='text-justify'>A collection of front-end projects that highlight my skills in building responsive, user-friendly interfaces with clean design and smooth interactions. I handled both the development and design for each one, paying close attention to detail, usability, and visual appeal. While most projects were built with <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, and <strong>Framer Motion</strong>, I also worked with <strong>Vue.js</strong>, <strong>Angular</strong>, <strong>SCSS</strong>, <strong>GSAP</strong>, and <strong>Vanilla JavaScript</strong> to showcase my range and adaptability across different front-end technologies.</p>
       
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center mx-auto gap-y-4 md:gap-x-3 md:gap-y-3 lg:gap-x-5 lg:gap-y-10 mt-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center mx-auto gap-y-4 md:gap-x-3 md:gap-y-3 lg:gap-x-5 lg:gap-y-10 mt-7 lg:mt-15'>
 
             <ProjectCard 
                 title='Sunverge-Nigeria'
@@ -27,15 +27,15 @@ const Projects = () => {
                 slug='/projects'
                 liveUrl='https://sunvergenigeria.vercel.app'
                 githubUrl='https://github.com/francisovberedjo/portfolio'
-                tags={['React', 'Node.js', 'Express', 'MongoDB']}
+                tags={['Next.js', 'Tailwind', 'TypeScript', 'Framer Motion']}
                 />
 
             <ProjectCard 
-                title='Sunverge-Nigeria'
-                image='/assets/projectimg/webimg3.jpg'
+                title='Framer'
+                image='/assets/projectimg/framer.png'
                 slug='/projects'
-                liveUrl='https://sunvergenigeria.vercel.app'
-                githubUrl='https://github.com/francisovberedjo/portfolio'
+                liveUrl='https://www.framer.com/'
+                githubUrl='https://github.com/francisovberedjo'
                 tags={['React', 'Node.js', 'Express', 'MongoDB']}
                 />
             <ProjectCard 
@@ -44,7 +44,7 @@ const Projects = () => {
                 slug='/projects'
                 liveUrl='https://sunvergenigeria.vercel.app'
                 githubUrl='https://github.com/francisovberedjo/portfolio'
-                tags={['React', 'Node.js', 'Express', 'MongoDB']}
+                tags={['Next.js', 'Node.js', 'GSAP', 'MongoDB']}
                 />
             <ProjectCard 
                 title='Sunverge-Nigeria'
@@ -52,7 +52,7 @@ const Projects = () => {
                 slug='/projects'
                 liveUrl='https://sunvergenigeria.vercel.app'
                 githubUrl='https://github.com/francisovberedjo/portfolio'
-                tags={['React', 'Node.js', 'Express', 'MongoDB']}
+                tags={['React', 'Vue.js', 'Express', 'MongoDB']}
                 />
 
             <ProjectCard 
