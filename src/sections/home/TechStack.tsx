@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import SectionHeader from '@/components/general/SectionHeader';
+import FrontEnd from '@/components/general/FrontEnd';
 
 
 const sections = ['Frontend', 'Backend', 'DevTools'] as const;
@@ -61,9 +62,7 @@ const TechStack = () => {
             className="text-center"
           >
             {active === 'Frontend' && (
-              <p className="text-lg text-gray-700">
-                HTML, CSS, JavaScript, React, Next.js, Tailwind, etc.
-              </p>
+              <FrontEnd/>
             )}
             {active === 'Backend' && (
               <p className="text-lg text-gray-700">

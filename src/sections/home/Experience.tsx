@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Download } from 'lucide-react';
 import SectionHeader from '@/components/general/SectionHeader';
 import SectionTitle from '@/components/general/SectionTitle';
-import Button from '@/components/ui/Button';
 interface ExperienceItem {
   title: string;
   company: string;
@@ -102,7 +101,7 @@ const Experience = () => {
                   <p className="text-sm text-dark-gray">{exp.company}</p>
                   <p className="text-xs text-gray-500">{exp.duration}</p>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-primary-accent text-white flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-primary-accent text-custom-black flex items-center justify-center">
                   {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
             </div>

@@ -1,59 +1,79 @@
 'use client';
 
-import { ButtonHTMLAttributes } from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { LucideIcon } from 'lucide-react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: LucideIcon;
-  iconClassName?: string;
-  children: React.ReactNode;
+  icon: LucideIcon;
+  children: ReactNode;
+  href?: string;
   downloadHref?: string;
 }
 
-const Button = ({
+export default function Button({
   icon: Icon,
-  iconClassName = '',
   children,
-  className = '',
+  href,
   downloadHref,
   ...props
-}: ButtonProps) => {
-  const baseClass = `
-    inline-flex items-center justify-center
-    gap-3 px-6 py-3
-    text-sm font-bold tracking-wide uppercase
-    bg-[#754AF8] text-[#121212]
-    border-2 border-[#2B2B2B]
-    rounded-none
-    hover:bg-[#ADFF00] hover:text-white
-    transition-all duration-200 ease-in-out
-    shadow-[4px_4px_0_#2B2B2B]
-  `;
+}: ButtonProps) {
+  const buttonContent = (
+    <motion.div
+      initial={{ backgroundColor: 'rgba(0,0,0,0)' }}
+      whileHover={{
+        backgroundColor: 'var(--tw-color-primary-accent)',
+        transition: { duration: 0.3 },
+      }}
+      className="flex items-center justify-start gap-3 rounded-full px-4 py-2 bg-transparent border border-white text-white overflow-hidden relative group transition-colors duration-300"
+    >
+      <motion.div
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-accent text-black shrink-0 transition-colors duration-300 z-10"
+        whileHover={{
+          backgroundColor: 'var(--tw-color-primary-accent)',
+        }}
+      >
+        <Icon size={20} />
+      </motion.div>
 
-  const iconWrapper = Icon && (
-    <Icon size={16} className={`text-inherit ${iconClassName}`} />
-  );
+      <motion.span
+        className="z-10 transition-colors duration-300 group-hover:text-black"
+      >
+        {children}
+      </motion.span>
 
-  const inner = (
-    <>
-      {children}
-      {iconWrapper}
-    </>
+      {/* Background hover animation */}
+      <motion.div
+        className="absolute inset-0 bg-primary-accent rounded-full -z-10"
+        initial={{ scaleX: 0 }}
+        whileHover={{ scaleX: 1 }}
+        transition={{ duration: 0.3 }}
+        style={{ originX: 0 }}
+      />
+    </motion.div>
   );
 
   if (downloadHref) {
     return (
-      <a href={downloadHref} download className={`${baseClass} ${className}`}>
-        {inner}
+      <a href={downloadHref} download>
+        {buttonContent}
       </a>
     );
   }
 
-  return (
-    <button {...props} className={`${baseClass} ${className}`}>
-      {inner}
-    </button>
-  );
-};
+  if (href) {
+    const isExternal = href.startsWith('http');
+    if (isExternal) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {buttonContent}
+        </a>
+      );
+    }
 
-export default Button;
+    return <Link href={href}>{buttonContent}</Link>;
+  }
+
+  return <button {...props}>{buttonContent}</button>;
+}
