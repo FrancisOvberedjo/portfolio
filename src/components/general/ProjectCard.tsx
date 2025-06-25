@@ -24,62 +24,65 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <motion.div
-      whileHover={{ y: -4, boxShadow: '0 12px 30px rgba(0,0,0,0.1)' }}
-      transition={{ type: 'spring', stiffness: 300 }}
-      className="bg-[#F5F5F5] dark:bg-[#2B2B2B] text-[#121212] dark:text-[#F5F5F5] border border-[#e5e5e5] dark:border-[#3a3a3a] rounded-2xl overflow-hidden transition-all duration-300"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.01 }}
+      transition={{ type: 'spring', stiffness: 140, damping: 18 }}
+      className="rounded-xl border border-[#e4e4e4] dark:border-[#333] bg-[#F5F5F5] dark:bg-[#2B2B2B] text-[#121212] dark:text-[#F5F5F5] overflow-hidden shadow-sm hover:shadow-md transition-shadow"
     >
       {/* Image */}
       <Link href={`/projects/${slug}`}>
-        <Image
-          src={image}
-          alt={title}
-          width={600}
-          height={400}
-          className="w-full h-56 object-cover transition-transform duration-500 hover:scale-[1.02]"
-        />
+        <div className="relative w-full h-56 overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
       </Link>
 
-      {/* Content */}
-      <div className="p-5 flex flex-col gap-4">
+      {/* Text Content */}
+      <div className="p-5 flex flex-col gap-3">
         {/* Title */}
         <Link href={`/projects/${slug}`}>
-          <h3 className="text-xl font-semibold tracking-tight hover:underline">
-            {title}
-          </h3>
+          <h3 className="text-lg font-bold hover:underline">{title}</h3>
         </Link>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 text-xs font-medium">
-          {tags.map((tag, i) => (
+        <div className="flex flex-wrap gap-1.5 text-[10px] font-medium">
+          {tags.slice(0, 5).map((tag, i) => (
             <span
               key={i}
-              className="bg-[#ADFF00] text-[#121212] px-3 py-1 rounded-full"
+              className="bg-[#ADFF00] text-[#121212] px-2 py-[2px] rounded-full"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center justify-between border-t border-[#e0e0e0] dark:border-[#3a3a3a] pt-4 text-sm font-medium">
-          <a
+        {/* Links */}
+        <div className="flex justify-between items-center border-t pt-3 border-[#ddd] dark:border-[#444] text-sm">
+          <motion.a
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
+            whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-1 hover:text-[#754AF8] transition"
           >
-            Live Site <ArrowUpRight size={14} />
-          </a>
+            Check it out <ArrowUpRight size={14} />
+          </motion.a>
 
-          <a
+          <motion.a
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-1 hover:text-[#754AF8] transition"
           >
             <Github size={16} />
             GitHub
-          </a>
+          </motion.a>
         </div>
       </div>
     </motion.div>
