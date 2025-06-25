@@ -1,79 +1,59 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import { LucideIcon } from 'lucide-react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: LucideIcon;
-  children: ReactNode;
-  href?: string;
+  icon?: LucideIcon;
+  iconClassName?: string;
+  children: React.ReactNode;
   downloadHref?: string;
 }
 
-export default function Button({
+const Button = ({
   icon: Icon,
+  iconClassName = '',
   children,
-  href,
+  className = '',
   downloadHref,
   ...props
-}: ButtonProps) {
-  const buttonContent = (
-    <motion.div
-      initial={{ backgroundColor: 'rgba(0,0,0,0)' }}
-      whileHover={{
-        backgroundColor: 'var(--tw-color-primary-accent)',
-        transition: { duration: 0.3 },
-      }}
-      className="flex items-center justify-start gap-3 rounded-full px-4 py-2 bg-transparent border border-white text-white overflow-hidden relative group transition-colors duration-300"
-    >
-      <motion.div
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-accent text-black shrink-0 transition-colors duration-300 z-10"
-        whileHover={{
-          backgroundColor: 'var(--tw-color-primary-accent)',
-        }}
-      >
-        <Icon size={20} />
-      </motion.div>
+}: ButtonProps) => {
+  const baseClass = `
+    inline-flex items-center justify-center
+    gap-2 px-6 py-3
+    text-sm font-medium
+    rounded-full
+    bg-black text-white
+    hover:bg-[#ADFF00] hover:text-black
+    transition-all duration-200 ease-in-out
+    shadow-sm hover:shadow-md
+    active:scale-95
+  `;
 
-      <motion.span
-        className="z-10 transition-colors duration-300 group-hover:text-black"
-      >
-        {children}
-      </motion.span>
+  const iconWrapper = Icon && (
+    <Icon size={18} className={`text-inherit ${iconClassName}`} />
+  );
 
-      {/* Background hover animation */}
-      <motion.div
-        className="absolute inset-0 bg-primary-accent rounded-full -z-10"
-        initial={{ scaleX: 0 }}
-        whileHover={{ scaleX: 1 }}
-        transition={{ duration: 0.3 }}
-        style={{ originX: 0 }}
-      />
-    </motion.div>
+  const inner = (
+    <>
+      {iconWrapper}
+      {children}
+    </>
   );
 
   if (downloadHref) {
     return (
-      <a href={downloadHref} download>
-        {buttonContent}
+      <a href={downloadHref} download className={`${baseClass} ${className}`}>
+        {inner}
       </a>
     );
   }
 
-  if (href) {
-    const isExternal = href.startsWith('http');
-    if (isExternal) {
-      return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          {buttonContent}
-        </a>
-      );
-    }
+  return (
+    <button {...props} className={`${baseClass} ${className}`}>
+      {inner}
+    </button>
+  );
+};
 
-    return <Link href={href}>{buttonContent}</Link>;
-  }
-
-  return <button {...props}>{buttonContent}</button>;
-}
+export default Button;
