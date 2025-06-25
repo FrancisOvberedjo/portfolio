@@ -18,39 +18,44 @@ const Button = ({
   downloadHref,
   ...props
 }: ButtonProps) => {
-  const baseClass = `
-    inline-flex items-center justify-center
-    gap-2 px-6 py-3
-    text-sm font-medium
-    rounded-full
+  const buttonClass = `
+    inline-flex items-center gap-3
+    pl-2 pr-4 py-2 rounded-full
     bg-black text-white
-    hover:bg-[#ADFF00] hover:text-black
-    transition-all duration-200 ease-in-out
-    shadow-sm hover:shadow-md
-    active:scale-95
+    border-2 border-white/10
+    font-semibold text-sm
+    transition-all duration-200
   `;
 
   const iconWrapper = Icon && (
-    <Icon size={18} className={`text-inherit ${iconClassName}`} />
+    <span
+      className={`
+        flex items-center justify-center w-8 h-8 rounded-full
+        bg-[#ADFF00] text-black
+        ${iconClassName}
+      `}
+    >
+      <Icon size={16} />
+    </span>
   );
 
   const inner = (
-    <>
+    <span className="flex items-center gap-3">
       {iconWrapper}
       {children}
-    </>
+    </span>
   );
 
   if (downloadHref) {
     return (
-      <a href={downloadHref} download className={`${baseClass} ${className}`}>
+      <a href={downloadHref} download className={`${buttonClass} ${className}`}>
         {inner}
       </a>
     );
   }
 
   return (
-    <button {...props} className={`${baseClass} ${className}`}>
+    <button {...props} className={`${buttonClass} ${className}`}>
       {inner}
     </button>
   );
