@@ -28,6 +28,7 @@ const Hero = () => {
         
         <div>
           <ImageCard />
+          <div className=''>Based in Lagos, Nigeria</div>
         </div>
         
         <div>
