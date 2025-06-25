@@ -6,6 +6,7 @@ import { Plus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../ui/Button';
+import { Download } from 'lucide-react';
 
 const menuItems = ['Home', 'About', 'Projects', 'Contact'];
 
@@ -69,7 +70,7 @@ export default function Navbar() {
                 </motion.div>
               </Link>
             ))}
-             <Button> view portfolio</Button>
+             <Button icon={Download}> view portfolio</Button>
           </div>
          
         </div>
@@ -149,7 +150,7 @@ export default function Navbar() {
                 </div>
               ))}
               <div className='my-5'>
-              <Button>Portfolio</Button>
+              <Button icon={Download}>Portfolio</Button>
               </div>
             </div>
             
