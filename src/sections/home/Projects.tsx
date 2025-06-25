@@ -14,11 +14,29 @@ const Projects = () => {
 
             <ProjectCard 
                 title='Sunverge-Nigeria'
-                image='/assets/projectimg/webimg1.jpg'
+                image='/assets/projectimg/sunverge.png'
+                slug='/projects'
+                liveUrl='https://sunvergenigeria.vercel.app'
+                githubUrl='https://github.com/FrancisOvberedjo/sunverge-nigeria'
+                tags={['React', 'Node.js', 'Express', 'MongoDB']}
+                
+                />
+            <ProjectCard 
+                title='Sunverge-Nigeria'
+                image='/assets/projectimg/webimg2.jpg'
                 slug='/projects'
                 liveUrl='https://sunvergenigeria.vercel.app'
                 githubUrl='https://github.com/francisovberedjo/portfolio'
-                
+                tags={['React', 'Node.js', 'Express', 'MongoDB']}
+                />
+
+            <ProjectCard 
+                title='Sunverge-Nigeria'
+                image='/assets/projectimg/webimg3.jpg'
+                slug='/projects'
+                liveUrl='https://sunvergenigeria.vercel.app'
+                githubUrl='https://github.com/francisovberedjo/portfolio'
+                tags={['React', 'Node.js', 'Express', 'MongoDB']}
                 />
             <ProjectCard 
                 title='Sunverge-Nigeria'
@@ -26,7 +44,15 @@ const Projects = () => {
                 slug='/projects'
                 liveUrl='https://sunvergenigeria.vercel.app'
                 githubUrl='https://github.com/francisovberedjo/portfolio'
-                
+                tags={['React', 'Node.js', 'Express', 'MongoDB']}
+                />
+            <ProjectCard 
+                title='Sunverge-Nigeria'
+                image='/assets/projectimg/webimg1.jpg'
+                slug='/projects'
+                liveUrl='https://sunvergenigeria.vercel.app'
+                githubUrl='https://github.com/francisovberedjo/portfolio'
+                tags={['React', 'Node.js', 'Express', 'MongoDB']}
                 />
 
             <ProjectCard 
@@ -35,32 +61,7 @@ const Projects = () => {
                 slug='/projects'
                 liveUrl='https://sunvergenigeria.vercel.app'
                 githubUrl='https://github.com/francisovberedjo/portfolio'
-                
-                />
-            <ProjectCard 
-                title='Sunverge-Nigeria'
-                image='/assets/projectimg/webimg1.jpg'
-                slug='/projects'
-                liveUrl='https://sunvergenigeria.vercel.app'
-                githubUrl='https://github.com/francisovberedjo/portfolio'
-                
-                />
-            <ProjectCard 
-                title='Sunverge-Nigeria'
-                image='/assets/projectimg/webimg1.jpg'
-                slug='/projects'
-                liveUrl='https://sunvergenigeria.vercel.app'
-                githubUrl='https://github.com/francisovberedjo/portfolio'
-                
-                />
-
-            <ProjectCard 
-                title='Sunverge-Nigeria'
-                image='/assets/projectimg/webimg1.jpg'
-                slug='/projects'
-                liveUrl='https://sunvergenigeria.vercel.app'
-                githubUrl='https://github.com/francisovberedjo/portfolio'
-                
+                tags={['React', 'Node.js', 'Express', 'MongoDB']}
                 />
         </div>
     </section>

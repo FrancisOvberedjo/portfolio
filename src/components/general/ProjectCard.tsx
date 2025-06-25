@@ -1,63 +1,88 @@
 'use client';
 
-import { Github, ArrowUpRight} from 'lucide-react';
+import { Github, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 type ProjectCardProps = {
   title: string;
   image: string;
-  slug: string; // used for /projects/[slug]
+  slug: string;
   liveUrl: string;
   githubUrl: string;
+  tags: string[];
 };
 
-const ProjectCard = ({ title, image, slug, liveUrl, githubUrl }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  image,
+  slug,
+  liveUrl,
+  githubUrl,
+  tags,
+}: ProjectCardProps) => {
   return (
-    <div className="w-full max-w-sm border-2 border-light-gray rounded-[10px]  overflow-hiddden">
-      {/* Image that links to the dynamic project page */}
-      <div className='p-2 '>
+    <motion.div
+      whileHover={{ y: -4, boxShadow: '0 12px 30px rgba(0,0,0,0.1)' }}
+      transition={{ type: 'spring', stiffness: 300 }}
+      className="bg-[#F5F5F5] dark:bg-[#2B2B2B] text-[#121212] dark:text-[#F5F5F5] border border-[#e5e5e5] dark:border-[#3a3a3a] rounded-2xl overflow-hidden transition-all duration-300"
+    >
+      {/* Image */}
       <Link href={`/projects/${slug}`}>
         <Image
           src={image}
           alt={title}
-          width={400}
-          height={250}
-          className="w-full h-56 object-cover rounded-[10px] cursor-pointer"
-          
+          width={600}
+          height={400}
+          className="w-full h-56 object-cover transition-transform duration-500 hover:scale-[1.02]"
         />
       </Link>
-      </div>
 
-      <div className="p-4 flex flex-col gap-3">
+      {/* Content */}
+      <div className="p-5 flex flex-col gap-4">
         {/* Title */}
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <Link href={`/projects/${slug}`}>
+          <h3 className="text-xl font-semibold tracking-tight hover:underline">
+            {title}
+          </h3>
+        </Link>
 
-        {/* Buttons */}
-        <div className="flex items-center gap-2 mt-2">
-          {/* Check it out */}
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 text-xs font-medium">
+          {tags.map((tag, i) => (
+            <span
+              key={i}
+              className="bg-[#ADFF00] text-[#121212] px-3 py-1 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Actions */}
+        <div className="flex items-center justify-between border-t border-[#e0e0e0] dark:border-[#3a3a3a] pt-4 text-sm font-medium">
           <a
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-zinc-800 transition"
+            className="inline-flex items-center gap-1 hover:text-[#754AF8] transition"
           >
-            Check it out
-            <ArrowUpRight size={16} className="text-white" />
+            Live Site <ArrowUpRight size={14} />
           </a>
 
-          {/* GitHub Icon */}
           <a
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+            className="inline-flex items-center gap-1 hover:text-[#754AF8] transition"
           >
-            <Github size={20} className="text-zinc-800 dark:text-white" />
+            <Github size={16} />
+            GitHub
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
