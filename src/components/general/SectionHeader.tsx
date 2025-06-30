@@ -9,7 +9,7 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({ title, index }: SectionHeaderProps) {
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full mt-14">
       {/* Section Divider with Centered + */}
       <motion.div
         className="flex items-center justify-center w-full"

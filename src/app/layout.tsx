@@ -39,7 +39,7 @@ export default function RootLayout({
         className={`${mont.variable} ${bebas.variable} bg-white text-custom-black font-normal text-sm md:text-xl lg:text-lg antialiased`}
       >
         <Navbar/>
-          <main className="pt-24 lg:pt-20">
+          <main className="pt-24 lg:pt-5">
            {children}
           </main>
         <Footer/>

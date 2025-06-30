@@ -41,7 +41,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-custom-black p-2 rounded-full">
+                <div className="bg-light-gray p-2 rounded-full">
                   <Mail className="text-primary-accent w-5 h-5" />
                 </div>
                 <div>

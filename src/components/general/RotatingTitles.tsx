@@ -26,7 +26,7 @@ export default function RotatingTitles() {
 
       {/* Text container with improved mask */}
       <div
-        className="relative h-6 w-[220px] overflow-hidden"
+        className="relative h-6 w-[270px] overflow-hidden"
         style={{
           WebkitMaskImage:
             'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0))',

@@ -86,25 +86,26 @@ const Experience = () => {
           </p>
         </div>
 
-          <div className="w-full mx-auto">
+        <div className="w-full mx-auto">
             {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="border-b border-dark-gray py-4"
-              >
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleIndex(index)}
-              >
-                <div>
-                  <p className="font-semibold text-lg text-custom-black">{exp.title}</p>
-                  <p className="text-md font-normal text-secondary-accent">{exp.company}</p>
-                  <p className="text-sm mt-2 text-dark-gray">{exp.duration}</p>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-custom-black text-primary-accent flex items-center justify-center">
-                  {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
-                </div>
+            <div
+              key={index}
+              className="border-b border-dark-gray py-4"
+            >
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => toggleIndex(index)}
+            >
+            <div>
+              <p className="font-semibold text-lg text-custom-black">{exp.title}</p>
+              <p className="text-md font-normal text-secondary-accent">{exp.company}</p>
+              <p className="text-sm mt-2 text-dark-gray">{exp.duration}</p>
             </div>
+            <div className="w-8 h-8 rounded-full bg-custom-black text-primary-accent flex items-center justify-center">
+              {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+            </div>
+            
+          </div>
 
           <AnimatePresence>
             {activeIndex === index && (
@@ -123,10 +124,14 @@ const Experience = () => {
           </AnimatePresence>
         </div>
       ))}
+      <div className='bg-black rounded-2xl p-30 mt-5'> </div>
+    </div>
+
+    
     </div>
 
 
-      </div>
+
 
      
     </section>

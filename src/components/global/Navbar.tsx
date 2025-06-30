@@ -41,12 +41,13 @@ export default function Navbar() {
 
   return (
     <div className="relative z-50">
-      {/* Thin orange line */}
+      {/* Thin line */}
       <div className="w-full h-1.5 bg-primary-accent fixed top-0 left-0 z-50" />
 
       {/* Sticky wrapper for desktop */}
-      <div className="hidden md:block sticky top-0 z-40 bg-white transition-colors duration-300">
-        <div className="w-full px-3 lg:px-20 py-4 flex items-center justify-between">
+      <div className="hidden lg:block sticky top-0 z-40 bg-white transition-colors duration-300">
+        
+        <div className="w-full px-3 lg:px-20 py-4 lg:py-6 flex items-center justify-between">
           <Image
             src="/assets/logo.svg"
             alt="Logo"
@@ -54,11 +55,12 @@ export default function Navbar() {
             height={40}
             className="h-8 w-auto"
           />
-          <div className="flex items-center justify-center space-x-8">
+         
+          <div className="flex items-center justify-center space-x-10">
             {menuItems.map((item, index) => (
               <Link key={item} href={`/${item.toLowerCase()}`}>
                 <motion.div
-                  className="font-semibold text-sm cursor-pointer flex items-start space-x-1"
+                  className="font-bold text-xl cursor-pointer flex items-start space-x-1"
                   initial={{ color: '#121212', scale: 1 }}
                   whileHover={{ color: '#754AF8', scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -70,9 +72,11 @@ export default function Navbar() {
                 </motion.div>
               </Link>
             ))}
-             <Button icon={Download}> view portfolio</Button>
           </div>
-         
+          <div>
+            <Button icon={Download}> view portfolio</Button>
+          </div>
+
         </div>
         
       </div>
